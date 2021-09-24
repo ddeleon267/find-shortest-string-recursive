@@ -1,6 +1,19 @@
 function findShortestStringRecursive(arr) {
-  // type your code here
+  if (arr.length === 1) return arr[0]
+ 
+  let shortest = arr[0]
+  if (arr[1].length < shortest.length){
+    return arr[1]
+  } else {
+    return findShortestStringRecursive(arr.slice(1))
+  }
 }
+
+// function findShortestString(arr) {
+//   return arr.reduce((shortest, string) =>
+//     string.length < shortest.length ? string : shortest
+//   );
+// }
 
 if (require.main === module) {
   // add your own tests in here
